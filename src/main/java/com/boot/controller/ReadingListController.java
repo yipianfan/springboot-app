@@ -14,7 +14,8 @@ import java.util.List;
 public class ReadingListController {
 
     @RequestMapping(value="/{reader}", method= RequestMethod.GET)
-    public String readersBooks(@PathVariable("reader") String reader, Model model) {
+    public String readersBooks(@PathVariable String reader, Model model) {
+        System.out.println("reader is: " + reader);
         List<Book> readingList = null;
         if (readingList != null) {
             model.addAttribute("books", readingList);
