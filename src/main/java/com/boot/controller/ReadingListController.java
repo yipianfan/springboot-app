@@ -3,7 +3,6 @@ package com.boot.controller;
 import com.boot.entity.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +29,7 @@ public class ReadingListController {
         if (readingList != null) {
             model.addAttribute("books", readingList);
         }
-        return "readingList";
+        return "success";
     }
 
     @RequestMapping(value="/{reader}", method=RequestMethod.POST)
