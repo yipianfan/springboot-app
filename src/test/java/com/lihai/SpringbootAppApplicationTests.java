@@ -1,4 +1,4 @@
-package com.boot;
+package com.lihai;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

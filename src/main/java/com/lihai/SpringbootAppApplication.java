@@ -1,13 +1,12 @@
-package com.boot;
+package com.lihai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.boot.controller", "config"})
+@SpringBootApplication
 public class SpringbootAppApplication {
 
     public static void main(String[] args) {
-        System.out.println("SpringbootAppApplication.main(String[]) called.");
         SpringApplication.run(SpringbootAppApplication.class, args);
     }
 }
