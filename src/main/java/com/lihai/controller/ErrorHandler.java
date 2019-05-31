@@ -1,18 +1,16 @@
 package com.lihai.controller;
 
+import com.lihai.entity.ResponseResult;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
+import static com.lihai.constant.BusinessCode.*;
 
-@ControllerAdvice
-public class ErrorHandler {
+@RestControllerAdvice
+public class ErrorHandler extends BaseController {
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    public String processValidationError(IllegalArgumentException e) {
-        return "404";
+    public ResponseResult<?> processValidationError() {
+        return parameterError(PARAMETER_ERROR.code(), PARAMETER_ERROR.msg());
     }
 }
