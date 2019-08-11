@@ -1,8 +1,8 @@
-package com.lihai.service;
+package com.lihai.dao;
 
 import com.lihai.entity.Account;
 
-public interface AccountService {
+public interface AccountDao {
 
     Account findUserByPhone(String phone);
 }
