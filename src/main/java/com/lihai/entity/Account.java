@@ -1,9 +1,6 @@
 package com.lihai.entity;
 
-import javax.persistence.Id;
-
 public class Account {
-    @Id
     private String uid;
     private String phone;
     private String account;
