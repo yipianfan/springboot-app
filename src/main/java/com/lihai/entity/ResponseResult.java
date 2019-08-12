@@ -1,6 +1,8 @@
 package com.lihai.entity;
 
-public class ResponseResult<T> {
+import java.io.Serializable;
+
+public class ResponseResult<T> implements Serializable {
     private int code;
     private int businessCode;
     private String msg;
