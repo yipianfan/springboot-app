@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccountServiceImpl implements AccountService{
-    @Autowired
+    //@Autowired
     private AccountDao dao;
 
     public Account findUserByPhone(String phone) {

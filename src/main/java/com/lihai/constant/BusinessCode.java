@@ -1,8 +1,8 @@
 package com.lihai.constant;
 
 public enum BusinessCode {
-    PARAMETER_ERROR(400, "传参错误"),
-    SUCCESS(200, "操作成功");
+    PARAMETER_ERROR(400, "parameter error"),
+    OK(200, "ok");
 
     private int code;
     private String msg;
