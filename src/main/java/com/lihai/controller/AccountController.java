@@ -1,45 +1,37 @@
 package com.lihai.controller;
 
-import com.lihai.entity.User;
+import com.lihai.service.AccountService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+import java.lang.instrument.Instrumentation;
 
 @RestController
-public class AccountController extends BaseController {
+public class AccountController {
+    private final Logger logger = LoggerFactory.getLogger(AccountController.class);
     @Autowired
-    private RedisTemplate<String, String> template;
+    private AccountService accountService;
     //@Autowired
     //private RedisTemplate<String, Object> template; // fail
     //@Resource
     //private RedisTemplate<String, Object> template;
-
-    Map<String, String> userMap = new HashMap<>();
-    {
-        userMap.put("Hunt", "123456");
-        userMap.put("Green", "abcdef");
-        userMap.put("Bill", "Seattle");
-    }
-
-    @RequestMapping("login")
-    public String login(HttpServletResponse response) {
-        response.setStatus(401);
-        return "账号或密码错误";
-    }
+    @Autowired
+    private RedisTemplate<String, String> template;
 
 
+
+
+
+
+
+
+    /** ---------------------------------------------------------------------------------- */
     @RequestMapping("click")
     public String click(HttpServletRequest request) {
         String ip = request.getHeader("x-forwarded-for");
@@ -71,6 +63,5 @@ public class AccountController extends BaseController {
         System.out.println("=====================================================");
 
         return ip;
-
     }
 }

@@ -1,17 +1,14 @@
 package com.lihai.entity;
 
-import javax.persistence.Id;
-
 public class Account {
-    @Id
-    private String uid;
+    private Integer uid;
     private String phone;
     private String account;
     private String password;
 
-    public String getUid() {return uid;}
+    public Integer getUid() {return uid;}
 
-    public void setUid(String uid) {this.uid = uid;}
+    public void setUid(Integer uid) {this.uid = uid;}
 
     public String getPhone() {return phone;}
 
@@ -24,4 +21,14 @@ public class Account {
     public String getPassword() {return password;}
 
     public void setPassword(String password) {this.password = password;}
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "uid=" + uid +
+                ", phone='" + phone + '\'' +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

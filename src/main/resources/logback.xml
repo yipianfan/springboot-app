@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 文件输出配置 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>E:\Log\springboot-app\springboot-app.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger.%msg%n</pattern>
+        </encoder>
+    </appender>
+  
+
+    <!-- 控制台输出配置 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger.%msg%n</Pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="org.springframework" level="trace"/>
+
+    <root level="info">
+        <appender-ref ref="file"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
