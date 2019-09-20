@@ -1,11 +1,9 @@
 package com.lihai.entity;
 
-import java.io.Serializable;
-
 import static com.lihai.constant.BusinessCode.OK;
 import static com.lihai.constant.BusinessCode.PARAMETER_ERROR;
 
-public class ResponseResult<T> implements Serializable {
+public class ResponseResult<T>{
     private int businessCode;
     private String msg;
     private T data;
