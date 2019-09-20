@@ -19,4 +19,10 @@ public class ResponseResult<T>{
     public static <T> ResponseResult<T> client(T data) {return new ResponseResult<>(PARAMETER_ERROR.code(), PARAMETER_ERROR.msg(), data);}
 
     public static <T> ResponseResult<T> custom(int bCode, String msg, T data) {return new ResponseResult<>(bCode, msg, data);}
+
+    public int getBusinessCode() {return businessCode;}
+
+    public String getMsg() {return msg;}
+
+    public T getData() {return data;}
 }
